@@ -1,0 +1,22 @@
+# Core data science
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+seaborn>=0.12
+
+# Machine learning
+scikit-learn>=1.3
+
+# Deep learning
+torch>=2.0
+torchvision>=0.15
+
+# Gradient boosting (optional — Module 06)
+xgboost>=1.7
+
+# NLP (optional — Module 09 bonus section)
+# transformers>=4.30
+
+# Jupyter
+jupyterlab>=4.0
+ipywidgets>=8.0
