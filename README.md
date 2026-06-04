@@ -43,6 +43,26 @@ Every notebook has a paired `.py` twin (same name, percent format) for [Zed's RE
 | 09 | [NLP & Text](09_nlp_text_processing/) | Text processing, embeddings, intro to transformers |
 | 10 | [Capstone Project](10_capstone_project/) | End-to-end ML project pulling it all together |
 
+### Advanced Image AI track (generative vision)
+
+An optional deep-dive that builds, step by step, toward a **working hairstyle swap** —
+take person A's face and give them person B's hair. Each module first builds the idea
+*from scratch* to understand it, then uses pretrained SOTA models.
+
+| # | Module | What You'll Learn |
+|---|--------|-------------------|
+| 11 | [Segmentation & Face Parsing](11_segmentation_face_parsing/) | U-Net from scratch, pixel-wise labels, hair masks |
+| 12 | [Autoencoders & VAEs](12_autoencoders_vae/) | Latent spaces, the reparameterization trick, interpolation |
+| 13 | [GANs from Scratch](13_gans/) | DCGAN, adversarial training, the road to StyleGAN |
+| 14 | [StyleGAN & GAN Inversion](14_stylegan_inversion/) | Style mixing, inverting real photos, latent hair blend *(GPU)* |
+| 15 | [Diffusion Models](15_diffusion/) | DDPM from scratch, Stable Diffusion inpainting *(GPU)* |
+| 16 | [Capstone — Hairstyle Swap](16_capstone_hairstyle_swap/) | Align → mask → generate → blend, end to end |
+
+> **Hardware:** Modules 11–13 and the local sections of 14–16 run on a Mac (CPU/MPS).
+> The heavy models (StyleGAN2, Stable Diffusion) need a GPU — run those sections on
+> **Google Colab** (Runtime → GPU). Every notebook is guarded so it runs top-to-bottom
+> either way; GPU-only cells skip with notes when no GPU is present.
+
 ## How to Use
 
 1. Open the notebook for each module in Jupyter
