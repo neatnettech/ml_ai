@@ -20,3 +20,7 @@ xgboost>=1.7
 # Jupyter
 jupyterlab>=4.0
 ipywidgets>=8.0
+ipykernel>=6.0
+
+# Zed REPL — pairs notebooks with .py percent-format twins
+jupytext>=1.16

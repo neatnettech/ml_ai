@@ -1,0 +1,20 @@
+{
+  "terminal": {
+    "detect_venv": {
+      "on": {
+        "directories": [".venv"],
+        "activate_script": "default"
+      }
+    }
+  },
+  "jupyter": {
+    "kernel_selections": {
+      "python": "python3"
+    }
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright"]
+    }
+  }
+}

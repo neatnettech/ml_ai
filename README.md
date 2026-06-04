@@ -18,6 +18,16 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
+## Run in Zed (REPL)
+
+Every notebook has a paired `.py` twin (same name, percent format) for [Zed's REPL](https://zed.dev/docs/repl):
+
+1. Open the module's `.py` file in Zed (e.g. `01_python_foundations/01_numpy_basics.py`)
+2. Put the cursor in a `# %%` cell, press `ctrl-shift-enter` to run it — output & plots render inline
+3. The `.py` and `.ipynb` stay paired; sync edits with `jupytext --sync <file>`
+
+> The `.ipynb` files keep saved outputs; the `.py` twins do not (output is live-only in Zed).
+
 ## Learning Path
 
 | # | Module | What You'll Learn |
