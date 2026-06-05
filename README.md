@@ -30,6 +30,13 @@ Every notebook has a paired `.py` twin (same name, percent format) for [Zed's RE
 
 ## Learning Path
 
+The catalog is grouped into three categories by the *kind of skill* each module
+builds. Work top to bottom — each category builds on the one before it.
+
+### 1. Pure ML — classic machine learning, the math, and scikit-learn
+
+Tabular data, the core ML workflow, and the algorithms you reach for first.
+
 | # | Module | What You'll Learn |
 |---|--------|-------------------|
 | 01 | [Python Foundations](01_python_foundations/) | NumPy, Pandas, Matplotlib — the ML toolkit |
@@ -38,30 +45,46 @@ Every notebook has a paired `.py` twin (same name, percent format) for [Zed's RE
 | 04 | [Classification & Trees](04_classification_and_trees/) | Decision trees, model evaluation, confusion matrices |
 | 05 | [Unsupervised Learning](05_unsupervised_learning/) | K-Means clustering, PCA, dimensionality reduction |
 | 06 | [Ensemble Methods](06_ensemble_methods/) | Random Forest, Gradient Boosting, XGBoost |
-| 07 | [Neural Networks](07_neural_networks/) | Build your first neural net with PyTorch |
-| 08 | [CNNs & Images](08_cnns_image_classification/) | Convolutional neural networks, image classification |
-| 09 | [NLP & Text](09_nlp_text_processing/) | Text processing, embeddings, intro to transformers |
-| 10 | [Capstone Project](10_capstone_project/) | End-to-end ML project pulling it all together |
 
-### Advanced Image AI track (generative vision)
+### 2. AI & Deep Learning — neural nets and generative vision
 
-An optional deep-dive that builds, step by step, toward a **working hairstyle swap** —
-take person A's face and give them person B's hair. Each module first builds the idea
-*from scratch* to understand it, then uses pretrained SOTA models.
+Neural networks with PyTorch, then a deep-dive that builds, step by step, toward a
+**working hairstyle swap** (take person A's face, give them person B's hair). Each
+generative module first builds the idea *from scratch*, then uses pretrained SOTA models.
 
 | # | Module | What You'll Learn |
 |---|--------|-------------------|
+| 07 | [Neural Networks](07_neural_networks/) | Build your first neural net with PyTorch |
+| 08 | [CNNs & Images](08_cnns_image_classification/) | Convolutional neural networks, image classification |
+| 09 | [NLP & Text](09_nlp_text_processing/) | Text processing, embeddings, intro to transformers |
 | 11 | [Segmentation & Face Parsing](11_segmentation_face_parsing/) | U-Net from scratch, pixel-wise labels, hair masks |
 | 12 | [Autoencoders & VAEs](12_autoencoders_vae/) | Latent spaces, the reparameterization trick, interpolation |
 | 13 | [GANs from Scratch](13_gans/) | DCGAN, adversarial training, the road to StyleGAN |
 | 14 | [StyleGAN & GAN Inversion](14_stylegan_inversion/) | Style mixing, inverting real photos, latent hair blend *(GPU)* |
 | 15 | [Diffusion Models](15_diffusion/) | DDPM from scratch, Stable Diffusion inpainting *(GPU)* |
-| 16 | [Capstone — Hairstyle Swap](16_capstone_hairstyle_swap/) | Align → mask → generate → blend, end to end |
 
-> **Hardware:** Modules 11–13 and the local sections of 14–16 run on a Mac (CPU/MPS).
+> **Hardware:** Modules 11–13 and the local sections of 14–15 run on a Mac (CPU/MPS).
 > The heavy models (StyleGAN2, Stable Diffusion) need a GPU — run those sections on
 > **Google Colab** (Runtime → GPU). Every notebook is guarded so it runs top-to-bottom
 > either way; GPU-only cells skip with notes when no GPU is present.
+
+### 3. Practical End-to-End — ship something complete
+
+Tie it all together. Two ML capstones, then a backend track that takes you from
+"train a model in a notebook" to "ship that model behind an authenticated REST API."
+
+| # | Module | What You'll Learn |
+|---|--------|-------------------|
+| 10 | [ML Capstone](10_capstone_project/) | End-to-end ML project pulling the Pure ML track together |
+| 16 | [Capstone — Hairstyle Swap](16_capstone_hairstyle_swap/) | Align → mask → generate → blend, end to end |
+| 17 | [FastAPI + SQLAlchemy CRUD](17_fastapi_crud/) | REST APIs, Pydantic schemas, SQLAlchemy 2.0 ORM, migrations |
+| 18 | [Cryptography Deep-Dive](18_cryptography/) | Hashing vs encryption, HMAC, symmetric/asymmetric, JWT signatures |
+| 19 | [Auth: JWT + Password Security](19_auth_jwt/) | Password hashing, OAuth2 flow, JWT, protected routes |
+| 20 | [Capstone — Serve an ML Model](20_capstone_model_api/) | Wrap the Module 10 model in an authenticated FastAPI service |
+
+> **Backend track (17–20)** runs anywhere — pure CPU, no GPU needed. Each module pairs
+> a teaching notebook (run it like any other) with a runnable `app/` project you launch
+> with `uvicorn`. See each module's `app/README.md` for run commands and example calls.
 
 ## How to Use
 

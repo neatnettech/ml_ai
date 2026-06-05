@@ -37,3 +37,17 @@ ipykernel>=6.0
 
 # Zed REPL — pairs notebooks with .py percent-format twins
 jupytext>=1.16
+
+# Backend track (Modules 17–20) — FastAPI, SQLAlchemy, auth/JWT, model serving
+fastapi>=0.110
+uvicorn[standard]>=0.29
+sqlalchemy>=2.0
+alembic>=1.13            # database migrations — Module 17
+pydantic>=2.6
+pydantic-settings>=2.2
+bcrypt>=4.1             # password hashing — Module 19
+pyjwt>=2.8              # JWT sign/verify (lighter than python-jose)
+cryptography>=42.0       # symmetric/asymmetric crypto — Module 18
+python-multipart>=0.0.9  # OAuth2 password-form parsing — Module 19
+httpx>=0.27             # test client / example calls
+joblib>=1.3             # model persistence — Module 20

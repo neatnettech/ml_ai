@@ -27,3 +27,7 @@ Thumbs.db
 *.zip
 data/
 !**/data/.gitkeep
+
+# Backend track (Modules 17–20) generated artifacts
+*.db                 # SQLite databases created at runtime
+*.joblib             # trained model artifacts (regenerate with train_model.py)
