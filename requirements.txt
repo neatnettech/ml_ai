@@ -51,3 +51,10 @@ cryptography>=42.0       # symmetric/asymmetric crypto — Module 18
 python-multipart>=0.0.9  # OAuth2 password-form parsing — Module 19
 httpx>=0.27             # test client / example calls
 joblib>=1.3             # model persistence — Module 20
+
+# Security track (Modules 21–26) — white-hat / network / web app security
+scapy>=2.5              # packet craft & sniffing — Modules 21, 25 (sniffing needs sudo)
+requests>=2.31          # HTTP exploitation against the vulnlab target — Modules 23–26
+pyotp>=2.9              # TOTP multi-factor auth — Module 24
+# cryptography (Module 18, above) is reused for the crypto-attack demos in Module 25.
+# External tools used as concepts (install separately): nmap, Wireshark/tcpdump, Burp Suite.

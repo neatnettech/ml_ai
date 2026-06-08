@@ -30,7 +30,7 @@ Every notebook has a paired `.py` twin (same name, percent format) for [Zed's RE
 
 ## Learning Path
 
-The catalog is grouped into three categories by the *kind of skill* each module
+The catalog is grouped into four categories by the *kind of skill* each module
 builds. Work top to bottom — each category builds on the one before it.
 
 ### 1. Pure ML — classic machine learning, the math, and scikit-learn
@@ -85,6 +85,34 @@ Tie it all together. Two ML capstones, then a backend track that takes you from
 > **Backend track (17–20)** runs anywhere — pure CPU, no GPU needed. Each module pairs
 > a teaching notebook (run it like any other) with a runnable `app/` project you launch
 > with `uvicorn`. See each module's `app/README.md` for run commands and example calls.
+
+### 4. Offensive & Defensive Security (White-Hat)
+
+White-hat hacking from the network up. Each module follows one loop — **attack →
+understand → defend**: you exploit a real flaw, learn its root cause, then build the
+fix. The web modules attack a bundled, intentionally-vulnerable lab app
+([`vulnlab`](23_web_app_security/vulnlab/)) you run on localhost. Every module lists its
+**purpose**, hands-on **exercises**, and a **Further reading** section linking the
+canonical articles (OWASP, RFCs, PortSwigger, NIST).
+
+| # | Module | What You'll Learn |
+|---|--------|-------------------|
+| 21 | [Networking & Packets](21_networking_and_packets/) | TCP/IP, sockets, build a port scanner, scapy, nmap concepts |
+| 22 | [Recon & Scanning](22_recon_and_scanning/) | Passive/active recon, banner grabbing, service/version fingerprinting, DNS enum |
+| 23 | [Web App Security](23_web_app_security/) | OWASP Top 10 on `vulnlab` — SQLi, XSS, IDOR, SSRF, command injection |
+| 24 | [Auth Attacks & Defense](24_auth_attacks_and_defense/) | Brute force, credential stuffing, hash cracking → bcrypt, rate limit, lockout, TOTP MFA |
+| 25 | [Traffic & Crypto Attacks](25_traffic_and_crypto_attacks/) | Sniffing, HTTP vs TLS, ECB leakage, weak hashes, timing attacks |
+| 26 | [Capstone — Pentest](26_capstone_pentest/) | Full engagement: recon → exploit chain → CVSS report → remediation → re-test |
+
+> ⚖️ **Ethics & the law — read [Module 21](21_networking_and_packets/) first.** This
+> track teaches *authorized, defensive* security. Only test systems you own or have
+> **written permission** to test (unauthorized access violates the CFAA and equivalents).
+> Every lab here targets `127.0.0.1` or the bundled `vulnlab` — **never** a third party.
+> Practice further on legal ranges: TryHackMe, Hack The Box, PortSwigger Web Security
+> Academy, OverTheWire.
+>
+> **Runs anywhere — pure CPU, no GPU.** A few raw-socket cells (scapy sniffing) need
+> `sudo`; they're guarded with a no-privilege fallback so notebooks always run clean.
 
 ## How to Use
 
