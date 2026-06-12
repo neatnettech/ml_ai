@@ -16,6 +16,14 @@
 # %% [markdown]
 # # Module 13.1 — GANs from Scratch (and the road to StyleGAN)
 #
+# **Purpose:** VAEs sample but blur, and a convincing hairstyle swap needs **sharp**
+# synthesis — which adversarial training delivers. In this **Advanced Image AI track**
+# module you build a DCGAN from scratch, learn to diagnose its classic failure modes, and
+# see how StyleGAN's per-layer styles become the editing handle the hairstyle-swap
+# capstone (Module 16) ultimately exploits.
+#
+# **Prerequisites:** Module 12 (latent spaces).
+#
 # VAEs (Module 12) gave us a samplable latent space, but the images came out **blurry**.
 # The reason: the VAE's pixel-wise reconstruction loss rewards "average" outputs. For a
 # convincing hairstyle swap we need **sharp** synthesis. Enter the **GAN**.
@@ -397,23 +405,27 @@ plt.show()
 G.train()
 
 # %% [markdown]
-# ## Key Takeaways
+# ## What you learned
 #
-# - A **GAN** trains a generator and discriminator adversarially. `D` *is* the loss function,
-#   and because it judges realism (not pixel error), GAN outputs are **sharp** where VAEs blur.
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **GAN** | Generator and discriminator train adversarially; `D` *is* the loss, and because it judges realism (not pixel error), outputs are **sharp** where VAEs blur |
+# | **DCGAN** | Transposed-conv generator + strided-conv discriminator; the stabilizing recipe (BatchNorm, LeakyReLU, lr=2e-4, betas=(0.5,0.999), label smoothing) exists because training is delicate |
+# | **Oscillating losses** | GAN losses don't go to zero — watch the *samples*, not just the loss |
+# | **Mode collapse** | The classic failure mode (with instability) to recognize and diagnose |
+# | **StyleGAN** | A mapping network (`z`→`w`) plus per-layer style injection gives coarse-to-fine control and **style mixing** — the mechanism we'll exploit to swap hair |
 #
-# - **DCGAN** = transposed-conv generator (upsamples noise to image) + strided-conv
-#   discriminator. The stabilizing recipe (BatchNorm, LeakyReLU, lr=2e-4, betas=(0.5,0.999),
-#   label smoothing) exists because GAN training is delicate.
+# ## Further reading
 #
-# - GAN losses **oscillate** — they don't go to zero. Watch the *samples*, not just the loss.
+# - **GAN paper** (Goodfellow et al. — the original adversarial framework):
+#   https://arxiv.org/abs/1406.2661
+# - **DCGAN** (the convolutional architecture and training recipe used here):
+#   https://arxiv.org/abs/1511.06434
+# - **PyTorch DCGAN tutorial** (the same model on CelebA faces, official walkthrough):
+#   https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html
+# - **StyleGAN** (A Style-Based Generator Architecture — the mapping network and per-layer
+#   styles): https://arxiv.org/abs/1812.04948
 #
-# - **Mode collapse** and instability are the classic failure modes to recognize.
-#
-# - **StyleGAN** adds a mapping network (`z`->`w`) and per-layer style injection, giving
-#   coarse-to-fine control and **style mixing** — the mechanism we'll exploit to swap hair.
-#
-# ---
 # **Next:** [StyleGAN & GAN Inversion →](../14_stylegan_inversion/01_stylegan_inversion.ipynb)
 # — load a pretrained StyleGAN2, edit real photos via inversion, and attempt a first
 # hairstyle blend.

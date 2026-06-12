@@ -4,6 +4,11 @@ A hands-on, exercise-driven learning path. Each module builds on the previous on
 Work through the notebooks in order — every concept is introduced with examples,
 then you practice with exercises marked with `# TODO`.
 
+Every notebook follows the same shape: a **Purpose** statement and **Prerequisites**
+up top, a **What you learned** table, a **Further reading** list (papers, docs, RFCs),
+and a **Next** link at the end — so you always know why a module exists, what it
+assumes, and where to go next.
+
 ## Prerequisites
 
 - Python 3.10+
@@ -60,13 +65,14 @@ generative module first builds the idea *from scratch*, then uses pretrained SOT
 | 11 | [Segmentation & Face Parsing](11_segmentation_face_parsing/) | U-Net from scratch, pixel-wise labels, hair masks |
 | 12 | [Autoencoders & VAEs](12_autoencoders_vae/) | Latent spaces, the reparameterization trick, interpolation |
 | 13 | [GANs from Scratch](13_gans/) | DCGAN, adversarial training, the road to StyleGAN |
-| 14 | [StyleGAN & GAN Inversion](14_stylegan_inversion/) | Style mixing, inverting real photos, latent hair blend *(GPU)* |
-| 15 | [Diffusion Models](15_diffusion/) | DDPM from scratch, Stable Diffusion inpainting *(GPU)* |
+| 14 | [StyleGAN & GAN Inversion](14_stylegan_inversion/) | Local lab: latent directions, W-space, toy inversion; then StyleGAN2 style mixing & real-photo inversion *(GPU part)* |
+| 15 | [Diffusion Models](15_diffusion/) | DDPM from scratch (2D + MNIST), classifier-free guidance, DDIM; Stable Diffusion inpainting *(GPU part)* |
 
-> **Hardware:** Modules 11–13 and the local sections of 14–15 run on a Mac (CPU/MPS).
-> The heavy models (StyleGAN2, Stable Diffusion) need a GPU — run those sections on
-> **Google Colab** (Runtime → GPU). Every notebook is guarded so it runs top-to-bottom
-> either way; GPU-only cells skip with notes when no GPU is present.
+> **Hardware:** Modules 11–13 and the local labs in 14–16 run on a Mac (CPU/MPS) —
+> every module gives you hands-on practice without a GPU. The heavy models (StyleGAN2,
+> Stable Diffusion) need a GPU — run those sections on **Google Colab** (Runtime → GPU).
+> Every notebook is guarded so it runs top-to-bottom either way; GPU-only cells skip
+> with notes when no GPU is present.
 
 ### 3. Practical End-to-End — ship something complete
 
@@ -76,7 +82,7 @@ Tie it all together. Two ML capstones, then a backend track that takes you from
 | # | Module | What You'll Learn |
 |---|--------|-------------------|
 | 10 | [ML Capstone](10_capstone_project/) | End-to-end ML project pulling the Pure ML track together |
-| 16 | [Capstone — Hairstyle Swap](16_capstone_hairstyle_swap/) | Align → mask → generate → blend, end to end |
+| 16 | [Capstone — Hairstyle Swap](16_capstone_hairstyle_swap/) | Align → mask → generate → blend, end to end — naive route + quality metrics run locally; StyleGAN/diffusion routes on Colab |
 | 17 | [FastAPI + SQLAlchemy CRUD](17_fastapi_crud/) | REST APIs, Pydantic schemas, SQLAlchemy 2.0 ORM, migrations |
 | 18 | [Cryptography Deep-Dive](18_cryptography/) | Hashing vs encryption, HMAC, symmetric/asymmetric, JWT signatures |
 | 19 | [Auth: JWT + Password Security](19_auth_jwt/) | Password hashing, OAuth2 flow, JWT, protected routes |
@@ -91,9 +97,10 @@ Tie it all together. Two ML capstones, then a backend track that takes you from
 White-hat hacking from the network up. Each module follows one loop — **attack →
 understand → defend**: you exploit a real flaw, learn its root cause, then build the
 fix. The web modules attack a bundled, intentionally-vulnerable lab app
-([`vulnlab`](23_web_app_security/vulnlab/)) you run on localhost. Every module lists its
-**purpose**, hands-on **exercises**, and a **Further reading** section linking the
-canonical articles (OWASP, RFCs, PortSwigger, NIST).
+([`vulnlab`](23_web_app_security/vulnlab/)) you run on localhost. As everywhere in the
+catalog, each module lists its **purpose**, hands-on **exercises**, and a **Further
+reading** section — here linking the canonical security references (OWASP, RFCs,
+PortSwigger, NIST).
 
 | # | Module | What You'll Learn |
 |---|--------|-------------------|

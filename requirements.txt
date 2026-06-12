@@ -28,6 +28,7 @@ xgboost>=1.7
 # accelerate>=0.27
 # safetensors>=0.4
 # face-alignment>=1.4    # 68-pt landmarks for FFHQ alignment — Module 16
+#                        #   (also works on CPU — install locally for real alignment)
 # ninja                  # builds StyleGAN2 custom CUDA ops — Module 14
 
 # Jupyter

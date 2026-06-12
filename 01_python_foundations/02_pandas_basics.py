@@ -16,6 +16,11 @@
 # %% [markdown]
 # # Module 1.2 — Pandas Basics
 #
+# **Purpose:** Real data never arrives as clean NumPy arrays — it arrives as tables:
+# CSVs, spreadsheets, database dumps. Pandas is how you load, clean, and reshape that
+# data before any model sees it, and every project in the **Pure ML track** starts with
+# exactly these moves.
+#
 # Pandas is the go-to library for working with tabular data (think spreadsheets, CSV files, databases).
 # Almost every ML project starts with loading and exploring data in Pandas.
 #
@@ -211,13 +216,24 @@ print("\nAvg quantity by product:\n", avg_qty_by_product)
 print("\nBest combo:", best_combo, "with revenue", combo.max())
 
 # %% [markdown]
-# ## Key Takeaways
+# ## What you learned
 #
-# - **DataFrame** = your main data structure for tabular data
-# - **Explore first**: `.head()`, `.shape`, `.describe()`, `.dtypes`
-# - **Filter** with boolean indexing: `df[df["col"] > value]`
-# - **Handle NaNs** before feeding data to ML models
-# - **groupby** is essential for understanding your data
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **DataFrame** | Your main data structure for tabular data |
+# | **Explore first** | `.head()`, `.shape`, `.describe()`, `.dtypes` before anything else |
+# | **Filtering** | Boolean indexing: `df[df["col"] > value]` |
+# | **Missing values** | Handle NaNs before feeding data to ML models |
+# | **groupby** | Essential for understanding and summarizing your data |
 #
-# ---
-# **Next:** [Matplotlib Visualization →](03_matplotlib_visualization.ipynb)
+# ## Further reading
+#
+# - **10 minutes to pandas** (the official whirlwind tour):
+#   https://pandas.pydata.org/docs/user_guide/10min.html
+# - **Indexing guide** (loc/iloc/boolean indexing in depth):
+#   https://pandas.pydata.org/docs/user_guide/indexing.html
+# - **Python for Data Analysis** (free book by pandas' creator):
+#   https://wesmckinney.com/book/
+#
+# **Next:** [Matplotlib Visualization →](03_matplotlib_visualization.ipynb) — you can't
+# trust data you haven't plotted.

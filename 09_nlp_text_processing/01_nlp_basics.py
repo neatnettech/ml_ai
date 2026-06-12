@@ -16,6 +16,13 @@
 # %% [markdown]
 # # Module 9.1 — NLP & Text Processing
 #
+# **Purpose:** How machines read: the pipeline that turns raw text into numbers a model can
+# learn from. This **AI & Deep Learning track** module covers classical NLP end to end —
+# preprocessing, Bag of Words, TF-IDF, and a working sentiment classifier — then introduces
+# the ideas (word embeddings, transformers) that power modern language models.
+#
+# **Prerequisites:** Module 7.
+#
 # Natural Language Processing (NLP) is a branch of AI that helps computers
 # understand, interpret, and generate human language. From spam filters to
 # chatbots to search engines, NLP is everywhere.
@@ -1024,23 +1031,28 @@ print(classification_report(y_test, pipeline_tfidf.predict(X_test),
                             target_names=['Negative', 'Positive']))
 
 # %% [markdown]
-# ---
-# ## Key Takeaways
+# ## What you learned
 #
-# - **Text must be converted to numbers** before ML models can use it
-# - **Preprocessing** (lowercasing, tokenization, stop word removal, stemming) cleans raw text
-# - **Bag of Words** counts word occurrences — simple but treats all words equally
-# - **TF-IDF** improves on BoW by down-weighting common words
-# - **Text classification** (e.g., sentiment analysis) follows the same ML workflow:
-#   preprocess -> features -> train -> evaluate
-# - **Word embeddings** represent words as dense vectors where similar words are close together
-# - **Transformers** (BERT, GPT) use attention mechanisms and are the current state of the art
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **Text → numbers** | ML models only work on numbers; every NLP pipeline starts with this conversion |
+# | **Preprocessing** | Lowercasing, tokenization, stop word removal, and stemming clean raw text |
+# | **Bag of Words** | Counts word occurrences — simple but treats all words equally |
+# | **TF-IDF** | Improves on BoW by down-weighting common words |
+# | **Text classification** | Sentiment analysis follows the same ML workflow: preprocess → features → train → evaluate |
+# | **Word embeddings** | Dense vectors where similar words are close together |
+# | **Transformers** | BERT and GPT use attention mechanisms — the current state of the art |
 #
-# ### What's Next?
+# ## Further reading
 #
-# In the capstone project, you'll bring together everything from this course —
-# data exploration, preprocessing, model building, evaluation — into a complete
-# end-to-end ML project.
+# - **word2vec paper** (Efficient Estimation of Word Representations — where dense
+#   embeddings took off): https://arxiv.org/abs/1301.3781
+# - **Attention Is All You Need** (the transformer paper): https://arxiv.org/abs/1706.03762
+# - **The Illustrated Transformer** (the best visual walkthrough of attention):
+#   https://jalammar.github.io/illustrated-transformer/
+# - **HuggingFace NLP course** (free, hands-on modern NLP with transformers):
+#   https://huggingface.co/learn/nlp-course
 #
-# ---
-# **Next:** [Capstone Project ->](../10_capstone_project/01_capstone.ipynb)
+# **Next:** [Capstone Project →](../10_capstone_project/01_capstone.ipynb) — bring together
+# everything from this course — data exploration, preprocessing, model building, evaluation —
+# into a complete end-to-end ML project.

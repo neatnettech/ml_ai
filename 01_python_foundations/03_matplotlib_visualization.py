@@ -16,6 +16,11 @@
 # %% [markdown]
 # # Module 1.3 — Matplotlib & Visualization
 #
+# **Purpose:** You can't trust data or models you haven't plotted — visualization is
+# ML's first debugging tool. A histogram catches a skewed feature, a scatter plot
+# catches a broken label, a loss curve catches a diverging model. This notebook gives
+# you the matplotlib core you'll reuse in every module of the **Pure ML track**.
+#
 # Visualization is how you *understand* your data before building models,
 # and how you *communicate* results after.
 #
@@ -201,12 +206,23 @@ plt.tight_layout()
 plt.show()
 
 # %% [markdown]
-# ## Key Takeaways
+# ## What you learned
 #
-# - **Always visualize** before modeling — you'll catch issues early
-# - `plt.scatter`, `plt.hist`, `plt.bar` cover 80% of needs
-# - **Subplots** let you compare things side-by-side
-# - Pandas `.plot()` is your quickest path from data to chart
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **Visualize first** | Plot before modeling — you'll catch issues early |
+# | **Core plot types** | `plt.scatter`, `plt.hist`, `plt.bar` cover 80% of needs |
+# | **Subplots** | Compare things side-by-side in one figure |
+# | **Pandas `.plot()`** | Your quickest path from data to chart |
 #
-# ---
-# **Next module:** [Math Foundations →](../02_math_foundations/01_linear_algebra.ipynb)
+# ## Further reading
+#
+# - **Matplotlib quick start** (the official intro to figures, axes, and plotting):
+#   https://matplotlib.org/stable/users/explain/quick_start.html
+# - **Anatomy of a figure** (every named part of a matplotlib plot, annotated):
+#   https://matplotlib.org/stable/gallery/showcase/anatomy.html
+# - **pandas visualization** (plotting straight from DataFrames):
+#   https://pandas.pydata.org/docs/user_guide/visualization.html
+#
+# **Next:** [Math Foundations →](../02_math_foundations/01_linear_algebra.ipynb) — the
+# minimum linear algebra to read ML code: every model is matrix math underneath.

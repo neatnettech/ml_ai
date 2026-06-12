@@ -16,6 +16,13 @@
 # %% [markdown]
 # # Module 19 — Authentication: JWT + Password Security
 #
+# **Purpose:** Combine the API from Module 17 with the crypto from Module 18 into a
+# real **login system**: bcrypt password hashing, JWTs with expiry, the OAuth2
+# password flow, and a dependency that locks any route behind a Bearer token. This is
+# the auth layer the Module 20 capstone will serve its model behind.
+#
+# **Prerequisites:** Modules 17–18.
+#
 # You can build an API (Module 17) and you understand the crypto (Module 18). Now
 # combine them into a real **login system** and lock your endpoints down.
 #
@@ -260,5 +267,28 @@ print("GET /me (with token) ->", me.status_code, me.json())
 # - **Return the same 401** for "no such user" and "wrong password" — do not leak
 #   which usernames exist.
 #
-# **Next:** Module 20 — the capstone. Train an ML model, persist it, and serve
-# predictions behind this exact auth layer. The full ML → API journey.
+# ## What you learned
+#
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **bcrypt** | Random salt + deliberately slow hashing; the salt lives inside the hash string |
+# | **JWT claims** | `sub` says who the token is for; `exp` limits the blast radius of a leak |
+# | **`jwt.decode`** | Verifies signature *and* expiry — you convert its exceptions into a `401` |
+# | **OAuth2 password flow** | POST credentials to `/token`, then `Authorization: Bearer <token>` everywhere |
+# | **`get_current_user`** | One `Depends` turns any route into a protected route |
+# | **Uniform errors** | The same `401` for unknown user and wrong password leaks nothing |
+#
+# ## Further reading
+#
+# - **OAuth2 — RFC 6749** (the framework the password flow comes from):
+#   https://www.rfc-editor.org/rfc/rfc6749
+# - **FastAPI security tutorial** (the official version of this module):
+#   https://fastapi.tiangolo.com/tutorial/security/
+# - **OWASP Authentication Cheat Sheet** (the production checklist):
+#   https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html
+# - **OWASP Password Storage Cheat Sheet** (bcrypt vs argon2, cost factors):
+#   https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html
+#
+# **Next:** [Module 20 — Capstone: Serve an ML Model →](../20_capstone_model_api/01_serve_model.ipynb)
+# — train an ML model, persist it, and serve predictions behind this exact auth
+# layer. The full ML → API journey.

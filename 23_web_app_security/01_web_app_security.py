@@ -22,6 +22,8 @@
 # the bundled `vulnlab` app, understand the **root cause**, then see the **fix** — the
 # attack→understand→defend loop at the heart of this track.
 #
+# **Prerequisites:** Modules 17 and 21–22 (HTTP APIs, recon).
+#
 # > ♻️ **Ethics reminder (Module 21):** the target is `vulnlab`, an app *you run on
 # > localhost*. These exact techniques against someone else's site are illegal.
 #

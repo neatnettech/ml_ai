@@ -21,6 +21,9 @@
 # `socket` call to wire and back. This module is the foundation for the whole
 # **Offensive & Defensive Security (White-Hat)** track.
 #
+# **Prerequisites:** Modules 17–19 recommended (you'll be attacking the kind of APIs
+# you built there).
+#
 # ---
 #
 # ## ⚠️ Read this first — ethics & the law

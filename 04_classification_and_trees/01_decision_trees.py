@@ -16,6 +16,13 @@
 # %% [markdown]
 # # Module 4.1 — Classification & Decision Trees
 #
+# **Purpose:** Your first non-linear model. Decision trees split data with simple
+# yes/no questions yet capture patterns no straight line can — and along the way you
+# build the evaluation toolkit (confusion matrices, precision/recall, ROC/AUC) that
+# every later module in the **Pure ML track** uses forever.
+#
+# **Prerequisites:** Module 3 (the ML workflow, train/test splits).
+#
 # Decision trees are one of the most intuitive and powerful machine learning
 # algorithms. They work for both classification and regression, and they form the
 # foundation for ensemble methods like Random Forests and Gradient Boosting.
@@ -786,21 +793,24 @@ print("- In domains like fraud or disease detection, RECALL is usually more")
 print("  important — missing a real case is worse than a false alarm.")
 
 # %% [markdown]
-# ## Key Takeaways
+# ## What you learned
 #
-# - **Decision trees** split data by asking yes/no questions, picking splits
-#   that maximize purity (minimize Gini impurity or entropy).
-# - **Visualization** is a big advantage of decision trees — you can see exactly
-#   how the model makes decisions.
-# - **Evaluation** goes beyond accuracy: use precision, recall, F1, and ROC/AUC
-#   to understand model performance, especially with imbalanced data.
-# - **Overfitting** is the main risk with decision trees — control it with
-#   `max_depth` and other hyperparameters.
-# - **Cross-validation** gives you a more reliable performance estimate than
-#   a single train/test split.
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **Decision trees** | Split data by asking yes/no questions, picking splits that maximize purity (minimize Gini impurity or entropy) |
+# | **Visualization** | A big advantage of trees — you can see exactly how the model makes decisions |
+# | **Evaluation beyond accuracy** | Precision, recall, F1, and ROC/AUC reveal what accuracy hides, especially with imbalanced data |
+# | **Overfitting** | The main risk with decision trees — control it with `max_depth` and other hyperparameters |
+# | **Cross-validation** | A more reliable performance estimate than a single train/test split |
 #
-# In the next module, we will explore **unsupervised learning** — what happens
-# when you don't have labels at all.
+# ## Further reading
 #
-# ---
-# **Next:** [Clustering →](../05_unsupervised_learning/01_clustering.ipynb)
+# - **scikit-learn — Decision trees** (the canonical reference for tree models):
+#   https://scikit-learn.org/stable/modules/tree.html
+# - **scikit-learn — Model evaluation** (every metric in this notebook, and many more):
+#   https://scikit-learn.org/stable/modules/model_evaluation.html
+# - **An Introduction to Statistical Learning, ch. 8** (free book; tree-based methods
+#   in depth): https://www.statlearning.com/
+#
+# **Next:** [Module 5 — Unsupervised Learning →](../05_unsupervised_learning/01_clustering.ipynb)
+# — what happens when you don't have labels at all.

@@ -16,6 +16,15 @@
 # %% [markdown]
 # # Module 17 — FastAPI + SQLAlchemy: Build a REST API
 #
+# **Purpose:** Turn Python functions into a real web service — the first step of the
+# **Backend track**, where code you've only ever run in notebooks learns to face the
+# outside world. You build a full CRUD Notes API on the trio every Python backend
+# rests on: FastAPI for routes, Pydantic for validation, SQLAlchemy 2.0 for the
+# database.
+#
+# **Prerequisites:** Module 1 (solid Python); Modules 3/10 supply the model you'll
+# eventually serve.
+#
 # Welcome to the **Practical End-to-End** track. So far you have trained models
 # *inside* notebooks. Now you learn to **expose code to the outside world** as a
 # web service — the foundation of shipping anything real.
@@ -323,5 +332,29 @@ print("GET after delete ->", missing.status_code, "(404 expected)")
 # The runnable version is in `app/`. Launch it with
 # `uvicorn app.main:app --reload` and open `/docs` for an interactive UI.
 #
-# **Next:** Module 18 — the cryptography that authentication is built on, so that
-# in Module 19 you can lock these endpoints down.
+# ## What you learned
+#
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **REST** | HTTP verbs + resources + status codes — the whole contract between client and server |
+# | **FastAPI routes** | Plain Python functions become HTTP endpoints with docs for free |
+# | **Pydantic schemas** | Separate create/update/read contracts; bad input dies with a `422` at the door |
+# | **SQLAlchemy 2.0 ORM** | Rows as typed Python objects instead of hand-written SQL strings |
+# | **Session dependency** | `Depends(get_db)` opens and closes a session per request, even on errors |
+# | **CRUD + TestClient** | The full create/read/update/delete lifecycle, exercised without a server |
+# | **Alembic** | `create_all` is the toy version; migrations version your schema like git |
+#
+# ## Further reading
+#
+# - **FastAPI tutorial** (the official walkthrough — excellent):
+#   https://fastapi.tiangolo.com/tutorial/
+# - **Pydantic docs** (validation in depth): https://docs.pydantic.dev/
+# - **SQLAlchemy 2.0 ORM quickstart** (the typed `Mapped[...]` style used here):
+#   https://docs.sqlalchemy.org/en/20/orm/quickstart.html
+# - **Alembic** (database migrations): https://alembic.sqlalchemy.org/
+# - **MDN HTTP overview** (verbs, status codes, headers from first principles):
+#   https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
+#
+# **Next:** [Module 18 — Cryptography Deep-Dive →](../18_cryptography/01_cryptography.ipynb)
+# — the cryptography that authentication is built on, so that in Module 19 you can
+# lock these endpoints down.

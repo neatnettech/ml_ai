@@ -16,6 +16,13 @@
 # %% [markdown]
 # # Module 8.1 — CNNs & Image Classification
 #
+# **Purpose:** Convolution turns the dense networks of Module 7 into models that actually
+# scale to images — the vision workhorse of the **AI & Deep Learning track**. You build and
+# train a CNN on MNIST with PyTorch, look inside it to see what the filters learn, and meet
+# the two ideas (data augmentation, transfer learning) that make small-data vision practical.
+#
+# **Prerequisites:** Module 7 (PyTorch training loop).
+#
 # Convolutional Neural Networks (CNNs) are the workhorse of modern computer vision.
 # They power everything from phone cameras that recognize faces to medical imaging
 # systems that detect tumors.
@@ -1083,22 +1090,25 @@ print("Training accuracy may be lower (harder examples), but test accuracy")
 print("tends to be higher — the model generalizes better.")
 
 # %% [markdown]
-# ## Key Takeaways
+# ## What you learned
 #
-# - **CNNs exploit image structure** — local patterns, shared weights, and hierarchical features
-#   make them far more efficient than fully connected networks for image tasks.
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **CNNs exploit image structure** | Local patterns, shared weights, and hierarchical features make them far more efficient than fully connected networks for images |
+# | **Three building blocks** | Convolutional layers detect patterns, pooling layers downsample, fully connected layers combine features for classification |
+# | **Training loop** | Forward pass, compute loss, backward pass, update weights — track train *and* validation metrics to detect overfitting |
+# | **Data augmentation** | Free extra training data through random transforms; always choose augmentations that preserve the label |
+# | **Transfer learning** | Fine-tuning a pre-trained model is faster and often more accurate than starting from scratch |
 #
-# - **Three building blocks** — Convolutional layers detect patterns, pooling layers
-#   downsample, and fully connected layers combine features for classification.
+# ## Further reading
 #
-# - **Training loop** — Forward pass, compute loss, backward pass, update weights.
-#   Track both training and validation metrics to detect overfitting.
+# - **CS231n — Convolutional Networks** (the classic course notes on conv/pool arithmetic
+#   and architectures): https://cs231n.github.io/convolutional-networks/
+# - **PyTorch CIFAR-10 tutorial** (official next-step tutorial on color images):
+#   https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html
+# - **Deep Learning book, ch. 9** (convolution in mathematical depth):
+#   https://www.deeplearningbook.org/contents/convnets.html
+# - **ResNet paper** (Deep Residual Learning — the architecture behind most transfer
+#   learning): https://arxiv.org/abs/1512.03385
 #
-# - **Data augmentation** — Free extra training data through random transforms.
-#   Always choose augmentations that preserve the label.
-#
-# - **Transfer learning** — Don't start from scratch when pre-trained models exist.
-#   Fine-tuning a pre-trained model is faster and often more accurate.
-#
-# ---
 # **Next:** [NLP & Text Processing →](../09_nlp_text_processing/01_nlp_basics.ipynb)

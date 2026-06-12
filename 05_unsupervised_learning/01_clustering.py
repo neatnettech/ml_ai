@@ -16,6 +16,13 @@
 # %% [markdown]
 # # Module 5.1 — Unsupervised Learning
 #
+# **Purpose:** Find structure without labels. K-Means and PCA are the workhorses of
+# data exploration and dimensionality reduction — the tools you reach for when there
+# is no target column to predict. Together with DBSCAN they form the unsupervised
+# side of the **Pure ML track**.
+#
+# **Prerequisites:** Modules 1–3.
+#
 # So far every model we have trained has had **labels** — a target column that tells
 # the algorithm what the right answer is.  That is *supervised* learning.  In this
 # module we drop the labels and let the algorithm discover structure on its own.
@@ -545,17 +552,23 @@ plt.tight_layout()
 plt.show()
 
 # %% [markdown]
-# ---
-# ## Key Takeaways
+# ## What you learned
 #
-# - **Unsupervised learning** works without labels — the algorithm discovers
-#   structure on its own.
-# - **K-Means** is fast and intuitive but assumes spherical clusters and needs
-#   you to pick K.  Use the **Elbow Method** to choose K.
-# - **DBSCAN** handles arbitrary cluster shapes and detects noise, but you need
-#   to tune `eps` and `min_samples`.
-# - **PCA** reduces dimensionality while preserving the most important variation.
-#   Great for visualization and as a preprocessing step before other algorithms.
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **Unsupervised learning** | Works without labels — the algorithm discovers structure on its own |
+# | **K-Means** | Fast and intuitive, but assumes spherical clusters and needs you to pick K — use the Elbow Method |
+# | **DBSCAN** | Handles arbitrary cluster shapes and detects noise, at the cost of tuning `eps` and `min_samples` |
+# | **PCA** | Reduces dimensionality while preserving the most important variation — great for visualization and preprocessing |
 #
-# ---
-# **Next:** [Ensemble Methods →](../06_ensemble_methods/01_ensembles.ipynb)
+# ## Further reading
+#
+# - **scikit-learn — Clustering** (K-Means, DBSCAN, and a dozen other algorithms):
+#   https://scikit-learn.org/stable/modules/clustering.html
+# - **scikit-learn — PCA** (decomposition and dimensionality reduction):
+#   https://scikit-learn.org/stable/modules/decomposition.html#pca
+# - **An Introduction to Statistical Learning, ch. 12** (free book; unsupervised
+#   learning in depth): https://www.statlearning.com/
+#
+# **Next:** [Module 6 — Ensemble Methods →](../06_ensemble_methods/01_ensembles.ipynb)
+# — combine many models to beat any single one.
