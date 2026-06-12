@@ -418,11 +418,11 @@ def load_image_from_url(url, size=384):
     return img.resize((size, size))
 
 
-# A public-domain portrait from Wikimedia Commons.
+# A public-domain portrait from Wikimedia Commons (Marie Curie, 1920).
 # (If you're offline, replace this with: Image.open("your_photo.jpg").convert("RGB"))
 PORTRAIT_URL = (
     "https://upload.wikimedia.org/wikipedia/commons/thumb/"
-    "c/cd/Portrait_Photography.jpg/480px-Portrait_Photography.jpg"
+    "7/7e/Marie_Curie_c1920.jpg/500px-Marie_Curie_c1920.jpg"
 )
 
 try:
