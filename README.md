@@ -121,6 +121,20 @@ PortSwigger, NIST).
 > **Runs anywhere — pure CPU, no GPU.** A few raw-socket cells (scapy sniffing) need
 > `sudo`; they're guarded with a no-privilege fallback so notebooks always run clean.
 
+### 5. Agents & Tooling — give an LLM hands
+
+You've shipped models behind APIs for *people*. Now expose capabilities to a *model*
+via the **Model Context Protocol (MCP)** — the open standard that lets Claude discover
+and call your tools, read your data, and reuse your prompts.
+
+| # | Module | What You'll Learn |
+|---|--------|-------------------|
+| 27 | [Model Context Protocol](27_mcp/) | Build an MCP server (tools/resources/prompts) + client over stdio, then register it with Claude |
+
+> **Runs anywhere — pure CPU, stdio transport, no GPU and no network.** Reuses the
+> FastAPI/Pydantic mental model from Module 17; pairs a teaching notebook with a runnable
+> `app/` (server + client) you wire into Claude per `app/README.md`.
+
 ## How to Use
 
 1. Open the notebook for each module in Jupyter
