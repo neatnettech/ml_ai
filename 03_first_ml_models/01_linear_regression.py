@@ -16,6 +16,13 @@
 # %% [markdown]
 # # Module 3.1 — First ML Models
 #
+# **Purpose:** The complete ML workflow — load, explore, split, train, evaluate — on the
+# two simplest models there are: linear and logistic regression, built from scratch *and*
+# with scikit-learn. Every later model in the **Pure ML track** (trees, ensembles, neural
+# nets) reuses exactly this workflow; only the model in the middle changes.
+#
+# **Prerequisites:** Modules 1–2 (NumPy arrays, linear algebra, statistics).
+#
 # In this notebook we go from zero to training real machine learning models.
 # We will cover linear regression (predicting numbers) and logistic regression
 # (predicting categories), both from scratch and with scikit-learn.
@@ -932,16 +939,28 @@ print(f"Using only sqft ignores these factors, so the model explains")
 print(f"less of the variance in prices.")
 
 # %% [markdown]
-# ## Key Takeaways
+# ## What you learned
 #
-# - **Machine learning** learns patterns from data instead of explicit programming
-# - The **ML workflow** is: load -> explore -> split -> train -> evaluate -> predict
-# - Always use a **train/test split** to evaluate honestly
-# - **Linear regression** fits a line to predict continuous values (y = wx + b)
-# - **Gradient descent** finds the best parameters by minimizing the cost function
-# - **Logistic regression** uses the sigmoid function for binary classification
-# - **R²** measures regression quality; **accuracy** measures classification quality
-# - More relevant features generally improve model performance
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **Machine learning** | Learns patterns from data instead of explicit programming |
+# | **ML workflow** | load → explore → split → train → evaluate → predict — the template every later module reuses |
+# | **Train/test split** | The only honest way to evaluate; never score on data the model saw |
+# | **Linear regression** | Fits a line (y = wx + b) to predict continuous values |
+# | **Gradient descent** | Finds the best parameters by minimizing the cost function — the engine of deep learning too |
+# | **Logistic regression** | Sigmoid turns a linear model into a binary classifier |
+# | **R² / accuracy** | Regression vs classification quality in one number each |
+# | **Features** | More relevant features generally improve performance |
 #
-# ---
-# **Next:** [Decision Trees ->](../04_classification_and_trees/01_decision_trees.ipynb)
+# ## Further reading
+#
+# - **scikit-learn — Linear models** (the canonical reference for everything here):
+#   https://scikit-learn.org/stable/modules/linear_model.html
+# - **An Introduction to Statistical Learning, ch. 3–4** (free book; regression and
+#   classification in depth): https://www.statlearning.com/
+# - **Google ML Crash Course — gradient descent** (interactive visualizations):
+#   https://developers.google.com/machine-learning/crash-course
+#
+# **Next:** [Module 4 — Decision Trees →](../04_classification_and_trees/01_decision_trees.ipynb)
+# — your first non-linear model, plus the evaluation toolkit (confusion matrices,
+# precision/recall) you'll use forever.

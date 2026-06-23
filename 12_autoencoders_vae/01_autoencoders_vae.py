@@ -16,6 +16,14 @@
 # %% [markdown]
 # # Module 12.1 — Autoencoders & Variational Autoencoders
 #
+# **Purpose:** The **Advanced Image AI track**'s first generative model. Module 11 found
+# *where* the hair is; a hairstyle swap must also *synthesize* new hair pixels, and every
+# generator rests on a **latent space**. This module builds the simplest model that has one
+# (the autoencoder), then upgrades it to a VAE that can sample — the foundation of all the
+# editing that follows, through the hairstyle-swap capstone (Module 16).
+#
+# **Prerequisites:** Modules 7–8.
+#
 # In Module 11 we learned to find *where* the hair is. Now we start building a model that
 # can *generate* image content — because a hairstyle swap ultimately has to **synthesize**
 # new hair pixels, not just copy them.
@@ -455,23 +463,24 @@ print("High beta: smoother/disentangled latent (better samples) but blurrier rec
 # faces we need adversarial training, which is Module 13.
 
 # %% [markdown]
-# ## Key Takeaways
+# ## What you learned
 #
-# - A **latent space** is a compact code capturing an image's essence; all generation and
-#   editing happens there, not in raw pixels.
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **Latent space** | A compact code capturing an image's essence; all generation and editing happens there, not in raw pixels |
+# | **Plain autoencoder** | Reconstructs well but its latent space has gaps — it can't generate from random codes |
+# | **VAE** | Outputs a *distribution* (`μ`, `logσ²`), samples via the **reparameterization trick** (`z = μ + σ·ε`), and uses a **KL loss** to pack codes into `N(0, 1)` — making the space samplable |
+# | **Latent interpolation** | Morphs smoothly between two images; blending *selected* latent dimensions is the foundation of targeted edits like hairstyle swapping (Module 14) |
+# | **VAE blur** | Pixel-wise reconstruction loss rewards averages; **GANs** (next) trade easy training for much sharper images |
 #
-# - A **plain autoencoder** reconstructs well but its latent space has gaps — it can't
-#   generate from random codes.
+# ## Further reading
 #
-# - A **VAE** outputs a *distribution* (`μ`, `logσ²`), samples via the **reparameterization
-#   trick** (`z = μ + σ·ε`), and uses a **KL loss** to pack codes into `N(0, 1)` — making
-#   the space samplable.
+# - **Auto-Encoding Variational Bayes** (the original VAE paper):
+#   https://arxiv.org/abs/1312.6114
+# - **An Introduction to Variational Autoencoders** (Kingma & Welling's book-length
+#   follow-up): https://arxiv.org/abs/1906.02691
+# - **Lilian Weng — From Autoencoder to Beta-VAE** (the best blog-form survey of the AE
+#   family): https://lilianweng.github.io/posts/2018-08-12-vae/
 #
-# - **Latent interpolation** morphs smoothly between two images. Blending *selected* latent
-#   dimensions is the foundation of targeted edits like hairstyle swapping (Module 14).
-#
-# - VAEs are blurry; **GANs** (next) trade the easy training for much sharper images.
-#
-# ---
 # **Next:** [GANs from Scratch →](../13_gans/01_gans.ipynb) — adversarial training for
 # sharp, realistic image generation, and the road to StyleGAN.

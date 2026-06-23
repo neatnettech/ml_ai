@@ -23,6 +23,8 @@
 # bcrypt, rate limiting, lockout, and TOTP MFA. It builds directly on the crypto
 # primitives from Module 18 and the auth flow from Module 19.
 #
+# **Prerequisites:** Modules 18–19 and 21–23 (hashing, JWT auth, the vulnlab).
+#
 # > ♻️ **Ethics reminder (Module 21):** brute-forcing a login you don't own is a crime
 # > (CFAA). Targets here: `vulnlab` on localhost and hashes you generate yourself.
 #

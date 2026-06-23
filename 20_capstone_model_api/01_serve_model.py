@@ -16,6 +16,14 @@
 # %% [markdown]
 # # Module 20 — Capstone: Serve an ML Model
 #
+# **Purpose:** The capstone of the **Backend track**: take the house-price model from
+# Module 10 and ship it as an **authenticated prediction service** — train, persist
+# with joblib, load at startup, validate input with Pydantic, predict behind JWT
+# auth. This is the full arc from "it works in my notebook" to "it's running for
+# users."
+#
+# **Prerequisites:** Modules 10, 17–19.
+#
 # This is where the whole catalog comes together. You will take the **house-price
 # model** from Module 10 and turn it into a **production-shaped web service** using
 # everything from the backend track:
@@ -272,4 +280,27 @@ print("\nBoth checks pass.")
 # - Batch predictions, caching, and rate limiting
 # - Swap the in-memory users for the SQLAlchemy table from Module 19
 #
-# Congratulations on finishing the catalog. Keep shipping.
+# ## What you learned
+#
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **Train ≠ serve** | Train occasionally, persist the artifact; the API just loads it and predicts |
+# | **Pipeline + joblib** | One saved object bundles preprocessing, model, and feature order |
+# | **Input validation** | Pydantic bounds reject impossible houses with a `422` before the model runs |
+# | **Auth in front of ML** | The Module 19 JWT layer means only authenticated callers spend your compute |
+# | **`/health` + graceful failure** | Unauthenticated liveness checks; a missing artifact is a `503`, not a crash |
+# | **The whole journey** | dataset → model (Modules 1–10) → deep nets (7–16) → API, crypto, auth (17–19) → shipped service (20) |
+#
+# ## Further reading
+#
+# - **scikit-learn — model persistence** (joblib, pickle, and their caveats):
+#   https://scikit-learn.org/stable/model_persistence.html
+# - **FastAPI deployment** (uvicorn workers, Docker, HTTPS):
+#   https://fastapi.tiangolo.com/deployment/
+# - **The Twelve-Factor App** (the classic checklist for production services):
+#   https://12factor.net/
+# - **Hidden Technical Debt in ML Systems** (why serving is the easy 5%):
+#   https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf
+#
+# **Next:** [Module 21 — Networking & Packets →](../21_networking_and_packets/01_networking_and_packets.ipynb)
+# — the security track: attack, understand, and defend the service you just built.

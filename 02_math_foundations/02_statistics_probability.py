@@ -16,6 +16,11 @@
 # %% [markdown]
 # # Module 2.2 — Statistics & Probability for ML
 #
+# **Purpose:** Train/test splits, loss curves, evaluation metrics, regularization —
+# all of it is applied statistics. Build the intuition for distributions, correlation,
+# and Bayes' theorem here, before the **Pure ML track** starts leaning on those ideas
+# in every evaluation step.
+#
 # Statistics and probability are the other half of ML's mathematical foundation.
 # Every time you evaluate a model, analyze data, or make predictions with
 # uncertainty, you're using these concepts.
@@ -698,14 +703,25 @@ print(f"  Bayes' formula gave:    {p_disease_given_positive:.1%}")
 #   on imbalanced datasets (just like the rare disease example!)
 
 # %% [markdown]
-# ## Key Takeaways
+# ## What you learned
 #
-# - **Mean** gives the center, but is sensitive to outliers — use **median** for skewed data
-# - **Standard deviation** measures spread — essential for feature scaling
-# - **Normal distribution** is the most common — many ML assumptions rely on it
-# - **Correlation** measures linear relationships — check it before modeling
-# - **Bayes' theorem** lets you reason about probabilities with evidence
-# - Always **visualize your data** before computing statistics — numbers alone can mislead
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **Mean vs median** | Mean gives the center but is outlier-sensitive — use median for skewed data |
+# | **Standard deviation** | Measures spread — essential for feature scaling |
+# | **Normal distribution** | The most common — many ML assumptions rely on it |
+# | **Correlation** | Measures linear relationships — check it before modeling |
+# | **Bayes' theorem** | Reason about probabilities with evidence |
+# | **Visualize first** | Numbers alone can mislead — plot before computing statistics |
 #
-# ---
-# **Next module:** [First ML Models →](../03_first_ml_models/)
+# ## Further reading
+#
+# - **Deep Learning book, ch. 3** (probability and information theory for ML):
+#   https://www.deeplearningbook.org/contents/prob.html
+# - **Seeing Theory** (interactive visual introduction to probability and statistics):
+#   https://seeing-theory.brown.edu/
+# - **scipy.stats** (the reference for every distribution and test used here):
+#   https://docs.scipy.org/doc/scipy/reference/stats.html
+#
+# **Next:** [First ML Models →](../03_first_ml_models/01_linear_regression.ipynb) — put
+# the math to work: train, evaluate, and understand your first real models.

@@ -16,6 +16,13 @@
 # %% [markdown]
 # # Module 11.1 — Segmentation & Face Parsing
 #
+# **Purpose:** The first skill of the **Advanced Image AI track**: before you can change
+# someone's hair you must know *which pixels are hair*. You build a U-Net from scratch,
+# train it on a toy dataset, then run a real face parser — producing the **hair mask** that
+# every later module, all the way to the hairstyle-swap capstone (Module 16), depends on.
+#
+# **Prerequisites:** Module 8 (CNNs).
+#
 # Welcome to the **Advanced Image AI** track. Modules 01–10 took you from NumPy to
 # classifying images with CNNs. This track has one north star: **swap a person's hairstyle**
 # — take person A's face and give them person B's hair, convincingly.
@@ -418,11 +425,11 @@ def load_image_from_url(url, size=384):
     return img.resize((size, size))
 
 
-# A public-domain portrait from Wikimedia Commons.
+# A public-domain portrait from Wikimedia Commons (Marie Curie, 1920).
 # (If you're offline, replace this with: Image.open("your_photo.jpg").convert("RGB"))
 PORTRAIT_URL = (
     "https://upload.wikimedia.org/wikipedia/commons/thumb/"
-    "c/cd/Portrait_Photography.jpg/480px-Portrait_Photography.jpg"
+    "7/7e/Marie_Curie_c1920.jpg/500px-Marie_Curie_c1920.jpg"
 )
 
 try:
@@ -711,23 +718,24 @@ print("This clean_mask() is exactly the kind of post-processing we'll reuse on t
 print("hair mask in the Module 16 capstone for a seamless composite.")
 
 # %% [markdown]
-# ## Key Takeaways
+# ## What you learned
 #
-# - **Segmentation = per-pixel classification.** Output is `(C, H, W)` logits; `argmax` over
-#   the class dimension gives the mask. Loss is plain `CrossEntropyLoss` applied per pixel.
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **Segmentation = per-pixel classification** | Output is `(C, H, W)` logits; `argmax` over the class dim gives the mask; loss is plain per-pixel `CrossEntropyLoss` |
+# | **U-Net** | The workhorse: encoder for context, decoder for resolution, **skip connections** to recover the fine detail lost during downsampling |
+# | **IoU** | The standard metric — accuracy alone is misleading when one class dominates the image |
+# | **Face parsing** | Segmentation with face-specific classes; BiSeNet on CelebAMask-HQ labels 19 regions, and **class 17 is hair** — the mask this track is built on |
+# | **Mask post-processing** | Largest component, fill holes, feather — turns a raw prediction into something you can composite cleanly; reused in the capstone |
 #
-# - **U-Net** is the workhorse: an encoder for context, a decoder for resolution, and
-#   **skip connections** to recover the fine detail (sharp edges) lost during downsampling.
+# ## Further reading
 #
-# - **IoU** (intersection over union) is the standard metric — accuracy alone is misleading
-#   when one class dominates the image.
+# - **U-Net paper** (Convolutional Networks for Biomedical Image Segmentation — the
+#   original encoder–decoder with skips): https://arxiv.org/abs/1505.04597
+# - **CelebAMask-HQ** (the face-parsing dataset and its 19 classes):
+#   https://github.com/switchablenorms/CelebAMask-HQ
+# - **CS231n** (Stanford's computer vision course; detection & segmentation lectures):
+#   https://cs231n.stanford.edu/
 #
-# - **Face parsing** is segmentation with face-specific classes. BiSeNet on CelebAMask-HQ
-#   labels 19 regions; **class 17 is hair** — the mask the rest of this track is built on.
-#
-# - **Mask post-processing** (largest component, fill holes, feather) turns a raw prediction
-#   into something you can composite cleanly. We reuse it in the capstone.
-#
-# ---
 # **Next:** [Autoencoders & VAEs →](../12_autoencoders_vae/01_autoencoders_vae.ipynb) —
 # build a generative model of images and meet the *latent space* where hair editing happens.

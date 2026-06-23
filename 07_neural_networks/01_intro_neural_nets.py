@@ -16,6 +16,13 @@
 # %% [markdown]
 # # Module 7.1 — Introduction to Neural Networks
 #
+# **Purpose:** The start of the **AI & Deep Learning track** — the jump from classical ML
+# to deep learning. You build a neural network twice: first by hand in NumPy so the math
+# (weighted sums, activations, backpropagation) is demystified, then in PyTorch to learn
+# the training loop that every later deep-learning module in this repo reuses verbatim.
+#
+# **Prerequisites:** Modules 2–3 (linear algebra, gradient descent).
+#
 # Neural networks are the foundation of modern deep learning. They power everything
 # from image recognition to language translation. In this notebook, you will learn
 # how neural networks work from the ground up — starting with the math behind a
@@ -29,8 +36,6 @@
 # - Forward pass, loss functions, and backpropagation intuition
 # - PyTorch basics: tensors and autograd
 # - Training your first neural network with PyTorch
-#
-# **Prerequisites:** Modules 1-6 (Python, NumPy, basic ML concepts)
 
 # %%
 # All imports for this notebook
@@ -1037,20 +1042,27 @@ plt.tight_layout()
 plt.show()
 
 # %% [markdown]
-# ---
-# ## Key Takeaways
+# ## What you learned
 #
-# - A **neural network** is a stack of layers, each made of neurons that compute
-#   weighted sums followed by activation functions
-# - **Activation functions** (ReLU, sigmoid, tanh) add non-linearity, enabling
-#   the network to learn complex patterns
-# - **Forward pass**: data flows through the network to produce predictions
-# - **Loss functions** (MSE, cross-entropy) measure prediction error
-# - **Backpropagation** computes gradients using the chain rule, and **gradient
-#   descent** updates weights to minimize the loss
-# - **PyTorch** automates gradient computation with autograd and provides
-#   building blocks (`nn.Module`, optimizers) for defining and training networks
-# - The training loop: forward -> loss -> backward -> update -> repeat
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **Neural network** | A stack of layers, each made of neurons computing weighted sums followed by activations |
+# | **Activation functions** | ReLU, sigmoid, tanh add the non-linearity that lets networks learn complex patterns |
+# | **Forward pass** | Data flows through the network to produce predictions |
+# | **Loss functions** | MSE and cross-entropy measure prediction error |
+# | **Backpropagation** | Computes gradients via the chain rule; gradient descent updates weights to minimize loss |
+# | **PyTorch** | Autograd automates gradients; `nn.Module` and optimizers are the building blocks for training |
+# | **Training loop** | forward → loss → backward → update → repeat — the rhythm of all deep learning |
 #
-# ---
-# **Next:** [Convolutional Neural Networks for Image Classification](../08_cnns_image_classification/01_cnns.ipynb)
+# ## Further reading
+#
+# - **PyTorch — Learn the Basics** (official tutorial: tensors, autograd, and the training
+#   loop): https://pytorch.org/tutorials/beginner/basics/intro.html
+# - **3Blue1Brown — Neural networks** (the best visual intuition for backpropagation):
+#   https://www.3blue1brown.com/topics/neural-networks
+# - **Deep Learning book, ch. 6** (feedforward networks in mathematical depth):
+#   https://www.deeplearningbook.org/contents/mlp.html
+# - **Karpathy — Neural Networks: Zero to Hero** (build networks from scratch, in code, on
+#   video): https://karpathy.ai/zero-to-hero.html
+#
+# **Next:** [Convolutional Neural Networks for Image Classification →](../08_cnns_image_classification/01_cnns.ipynb)

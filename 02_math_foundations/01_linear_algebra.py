@@ -16,6 +16,14 @@
 # %% [markdown]
 # # Module 2.1 — Linear Algebra for ML
 #
+# **Purpose:** Every model in this catalog — linear regression, trees' split math,
+# neural networks — is matrix multiplication underneath. This notebook covers the
+# minimum linear algebra needed to read ML code fluently: vectors, dot products,
+# matrix multiplication, and solving linear systems, all in NumPy as used throughout
+# the **Pure ML track**.
+#
+# **Prerequisites:** Module 1 (NumPy arrays and plotting).
+#
 # Linear algebra is the language of machine learning. Every dataset is a matrix,
 # every feature vector is... a vector, and most ML algorithms boil down to
 # matrix operations under the hood.
@@ -544,15 +552,26 @@ print(f"Match: {np.allclose(check, b)}")
 # Answer: x = -0.60, y = 3.07 (approximately)
 
 # %% [markdown]
-# ## Key Takeaways
+# ## What you learned
 #
-# - **Vectors** are 1D arrays — they represent data points, weights, features
-# - **Dot product** measures similarity and is the core of linear predictions
-# - **Matrices** are 2D arrays — datasets, weight layers, transformations
-# - **Matrix multiplication** is the workhorse of ML (not element-wise!)
-# - **Transpose** flips rows/columns — used everywhere to align dimensions
-# - **Inverse** solves equations — the normal equation for linear regression
-# - Use `np.linalg.solve` instead of computing the inverse directly (more stable)
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **Vectors** | 1D arrays representing data points, weights, features |
+# | **Dot product** | Measures similarity — the core of linear predictions |
+# | **Matrices** | 2D arrays — datasets, weight layers, transformations |
+# | **Matrix multiplication** | The workhorse of ML (not element-wise!) |
+# | **Transpose** | Flips rows/columns — used everywhere to align dimensions |
+# | **Inverse** | Solves equations — the normal equation for linear regression |
+# | **`np.linalg.solve`** | More stable than computing the inverse directly |
 #
-# ---
-# **Next:** [Statistics & Probability →](02_statistics_probability.ipynb)
+# ## Further reading
+#
+# - **3Blue1Brown — Essence of Linear Algebra** (the best visual intuition there is):
+#   https://www.3blue1brown.com/topics/linear-algebra
+# - **Deep Learning book, ch. 2** (linear algebra exactly as ML uses it):
+#   https://www.deeplearningbook.org/contents/linear_algebra.html
+# - **numpy.linalg** (the reference for every routine used here):
+#   https://numpy.org/doc/stable/reference/routines.linalg.html
+#
+# **Next:** [Statistics & Probability →](02_statistics_probability.ipynb) — the other
+# half of ML's math foundation: distributions, correlation, and Bayes.

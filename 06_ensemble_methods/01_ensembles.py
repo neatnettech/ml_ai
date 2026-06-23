@@ -16,6 +16,13 @@
 # %% [markdown]
 # # Module 6.1 — Ensemble Methods
 #
+# **Purpose:** Many weak trees beat one strong model. Bagging and boosting combine
+# hundreds of shallow decision trees into Random Forests and Gradient Boosting — the
+# algorithms that still win on tabular data — and complete the supervised half of the
+# **Pure ML track**.
+#
+# **Prerequisites:** Module 4 (decision trees, evaluation metrics).
+#
 # So far we have trained individual models — a single decision tree, a single logistic
 # regression, etc. But what if we could combine many models together to get a
 # **better** result than any single model alone? That is exactly what **ensemble
@@ -549,19 +556,25 @@ print(f"Best CV score:   {grid_ex.best_score_:.4f}")
 print(f"Test accuracy:   {grid_ex.score(X_test, y_test):.4f}")
 
 # %% [markdown]
-# ---
-# ## Key Takeaways
+# ## What you learned
 #
-# - **Ensembles** combine multiple models to produce better predictions than any
-#   single model.
-# - **Bagging** (Random Forest) trains trees in parallel on bootstrap samples and
-#   reduces **variance** (overfitting).
-# - **Boosting** (Gradient Boosting, XGBoost) trains trees sequentially, each one
-#   correcting the previous one's errors. It reduces **bias** (underfitting).
-# - **Feature importance** helps you understand which inputs matter most.
-# - **GridSearchCV** automates hyperparameter tuning with cross-validation.
-# - When in doubt, try a **Random Forest** first — it works well out of the box
-#   with very little tuning.
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **Ensembles** | Combine multiple models to produce better predictions than any single model |
+# | **Bagging (Random Forest)** | Trains trees in parallel on bootstrap samples — reduces variance (overfitting) |
+# | **Boosting (Gradient Boosting, XGBoost)** | Trains trees sequentially, each correcting the previous one's errors — reduces bias (underfitting) |
+# | **Feature importance** | Tells you which inputs matter most to the model |
+# | **GridSearchCV** | Automates hyperparameter tuning with cross-validation |
+# | **Random Forest first** | When in doubt, start here — it works well out of the box with very little tuning |
 #
-# ---
-# **Next:** [Intro to Neural Networks →](../07_neural_networks/01_intro_neural_nets.ipynb)
+# ## Further reading
+#
+# - **scikit-learn — Ensemble methods** (bagging, forests, and boosting in one place):
+#   https://scikit-learn.org/stable/modules/ensemble.html
+# - **XGBoost documentation** (the library that dominates tabular ML competitions):
+#   https://xgboost.readthedocs.io/
+# - **The Elements of Statistical Learning, ch. 10** (free book; boosting theory in
+#   depth): https://hastie.su.domains/ElemStatLearn/
+#
+# **Next:** [Module 7 — Intro to Neural Networks →](../07_neural_networks/01_intro_neural_nets.ipynb)
+# — stack simple units into networks that can learn almost anything.

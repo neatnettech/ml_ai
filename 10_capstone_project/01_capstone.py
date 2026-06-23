@@ -16,6 +16,14 @@
 # %% [markdown]
 # # Module 10 — Capstone Project: Predict House Prices
 #
+# **Purpose:** Run the complete ML workflow solo — EDA to tuned model — and produce
+# the **capstone deliverable of the Pure ML track**: a house-price predictor built end
+# to end. This is a self-directed capstone: by design there is no separate
+# guided-exercise section — every step is a TODO you complete yourself, with hidden
+# solutions if you get stuck.
+#
+# **Prerequisites:** Modules 1–6 (the full Pure ML track).
+#
 # Congratulations on making it to the final module! This capstone project ties
 # together everything you have learned across all previous modules into one
 # complete, end-to-end machine learning project.
@@ -881,3 +889,27 @@ What could be improved (in a real project):
 You now have all the core skills to tackle real ML projects.
 Keep building, keep learning, and keep experimenting!
 """)
+
+# %% [markdown]
+# ## What you learned
+#
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **EDA before modeling** | Histograms, correlation heatmaps, and scatter plots reveal patterns, outliers, and missing values before you commit to a model |
+# | **Preprocessing without leakage** | Median imputation, an 80/20 split, and a scaler fit on training data only keep your evaluation honest |
+# | **Model comparison** | Linear Regression baseline vs Random Forest vs Gradient Boosting — never rely on a single model |
+# | **Evaluation** | R², MAE, and RMSE plus residual plots — numbers and pictures together tell the full story |
+# | **Hyperparameter tuning** | GridSearchCV squeezes out extra performance once the big wins are banked |
+# | **Communicating results** | Plain-language conclusions are part of the deliverable — a model nobody understands is a model nobody uses |
+#
+# ## Further reading
+#
+# - **scikit-learn — Choosing the right estimator** (the famous flowchart for picking
+#   a model): https://scikit-learn.org/stable/machine_learning_map.html
+# - **Google — Rules of Machine Learning** (hard-won engineering wisdom for real ML
+#   systems): https://developers.google.com/machine-learning/guides/rules-of-ml
+# - **Kaggle Learn** (free hands-on micro-courses to keep practicing):
+#   https://www.kaggle.com/learn
+#
+# **Next:** [Module 11 — Segmentation & Face Parsing →](../11_segmentation_face_parsing/01_segmentation.ipynb)
+# — the Advanced Image AI track begins: teach a network to label every pixel.

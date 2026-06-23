@@ -16,6 +16,13 @@
 # %% [markdown]
 # # Module 1.1 — NumPy Basics
 #
+# **Purpose:** Vectorized arrays are the substrate of all ML in Python — every dataset,
+# weight matrix, and gradient you'll ever touch is a NumPy array (or something imitating
+# one). This notebook teaches you to think in shapes, not loops, which is the single
+# habit the entire **Pure ML track** builds on.
+#
+# **Prerequisites:** None — this is the starting module of the catalog.
+#
 # NumPy is the foundation of almost all ML in Python. It gives you fast, vectorized
 # operations on arrays of numbers — no slow Python loops needed.
 #
@@ -289,12 +296,23 @@ print("Row means:", row_means.flatten())
 print("Centered:\n", centered)
 
 # %% [markdown]
-# ## Key Takeaways
+# ## What you learned
 #
-# - **Arrays** are the core data structure — fixed type, fast operations
-# - **Vectorize** — avoid Python loops, use array operations
-# - **Shape matters** — always be aware of your array dimensions
-# - **Broadcasting** lets you combine arrays of different shapes
+# | Concept | Why it matters |
+# |---------|----------------|
+# | **Arrays** | The core data structure — fixed type, fast operations |
+# | **Vectorization** | Avoid Python loops; use array operations instead |
+# | **Shape** | Always be aware of your array dimensions |
+# | **Broadcasting** | Combine arrays of different shapes without copying data |
 #
-# ---
-# **Next:** [Pandas Basics →](02_pandas_basics.ipynb)
+# ## Further reading
+#
+# - **NumPy quickstart** (the official tour of arrays, shapes, and operations):
+#   https://numpy.org/doc/stable/user/quickstart.html
+# - **Broadcasting** (the official rules for combining different shapes):
+#   https://numpy.org/doc/stable/user/basics.broadcasting.html
+# - **From Python to NumPy** (free book on trading loops for vectorized thinking):
+#   https://www.labri.fr/perso/nrougier/from-python-to-numpy/
+#
+# **Next:** [Pandas Basics →](02_pandas_basics.ipynb) — real data arrives as tables;
+# learn to load, clean, and reshape them.

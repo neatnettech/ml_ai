@@ -22,6 +22,8 @@
 # leaks patterns, fast/unsalted hashes crack, non-constant-time comparisons leak secrets
 # through timing). It extends the primitives from Module 18 into their *failure modes*.
 #
+# **Prerequisites:** Modules 18 and 21 (crypto primitives, packets).
+#
 # > ♻️ **Ethics reminder (Module 21):** sniff only traffic you own. Everything here is
 # > loopback (`127.0.0.1`) and locally-generated ciphertext. Capturing other people's
 # > traffic is wiretapping.

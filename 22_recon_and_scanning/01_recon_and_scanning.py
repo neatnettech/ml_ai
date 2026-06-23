@@ -22,6 +22,8 @@
 # you understand. This module is the bridge from raw ports to the web attacks in
 # Module 23.
 #
+# **Prerequisites:** Module 21 (sockets, ports, TCP handshakes).
+#
 # > ♻️ **Ethics reminder (see Module 21):** authorized targets only. Everything here
 # > hits `127.0.0.1` / the bundled `vulnlab`. Recon against systems you don't own —
 # > even "just looking" — can be illegal.

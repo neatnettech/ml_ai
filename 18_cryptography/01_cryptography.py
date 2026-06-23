@@ -16,6 +16,13 @@
 # %% [markdown]
 # # Module 18 — Cryptography Deep-Dive
 #
+# **Purpose:** The primitives authentication stands on — hashing, salting, HMAC,
+# symmetric and asymmetric encryption — each demonstrated in code you run and break.
+# The payoff: you **build and verify an HS256 JWT by hand**, so the login system you
+# assemble in Module 19 is never a black box.
+#
+# **Prerequisites:** Module 17 (the API you're about to lock down).
+#
 # Before you can build authentication (Module 19), you need to understand the
 # primitives it stands on. This module is **mostly notebook-driven** — no server,
 # just code you run to *see* how the maths protects data.
@@ -328,5 +335,19 @@ except ValueError as e:
 # Crucially: **hashing protects passwords**, **HMAC signs JWTs**, and a JWT's
 # payload is *readable* — only its signature is protected.
 #
-# **Next:** Module 19 — use `passlib` (bcrypt) and `pyjwt` to turn these primitives
-# into a real login system, and lock down the Module 17 API.
+# ## Further reading
+#
+# - **Crypto 101** (free book — the whole field from first principles):
+#   https://www.crypto101.io/
+# - **HMAC — RFC 2104** (the original spec, surprisingly readable):
+#   https://www.rfc-editor.org/rfc/rfc2104
+# - **JWT — RFC 7519** (exactly what you built in Step 6):
+#   https://www.rfc-editor.org/rfc/rfc7519
+# - **cryptography.io** (the library behind Fernet and the RSA demo):
+#   https://cryptography.io/
+# - **Latacora — Cryptographic Right Answers** (which primitive to actually pick):
+#   https://www.latacora.com/blog/2018/04/03/cryptographic-right-answers/
+#
+# **Next:** [Module 19 — Authentication: JWT + Password Security →](../19_auth_jwt/01_auth_jwt.ipynb)
+# — use `passlib` (bcrypt) and `pyjwt` to turn these primitives into a real login
+# system, and lock down the Module 17 API.
