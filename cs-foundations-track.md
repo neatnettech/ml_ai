@@ -1,9 +1,10 @@
 # Track 6 — CS Foundations (from bits to systems)
 
-> **Status:** design / curriculum plan. Branch `feat/cs-foundations-track`.
-> Not yet built — this doc is the path. Modules get scaffolded one at a time
-> (pilot = Module 28), each as real source + a markdown lab, matching the repo's
-> Purpose / Prerequisites / What-you-learned / Further-reading / Next convention.
+> **Status:** ✅ all 17 modules built (28–44). Each is real source + a lab README in
+> the repo's Purpose / Prerequisites / What-you-learned / Further-reading / Next
+> convention. Everything builds warning-free (`-Wall -Wextra -Wpedantic`); the native
+> parts run on Apple Silicon, with x86-64 (CS:APP bomb/attack labs) and RISC-V (xv6)
+> parts documented for the `setup/` container + qemu.
 
 ## Why this track
 
@@ -96,15 +97,21 @@ bomb/attack/cache labs are x86-64 binaries) and **RISC-V** (xv6). Plan:
 A `Brewfile` + a `Dockerfile` for the x86-64 lab box would be Module 28's setup
 deliverable, so every later module has a consistent environment.
 
-## Open questions for later
+## Decisions made during the build
 
-- **x86-64-via-Docker vs native ARM64** for the assembly/CS:APP labs (recommended:
-  Docker x86-64, to match CS:APP verbatim) — confirm before building Module 32.
-- **Module 42 language** — MIT 6.5840 is Go; keep Go (authentic) or re-cast in C/Python?
-- Whether to fold a **progress tracker / CI** in now (was deferred for the ML tracks too).
+- **Assembly (Module 32):** taught x86-64 (CS:APP) as primary with the bomb/attack labs
+  in the `setup/` x86-64 container; added a native **AArch64** demo that assembles and
+  runs on this Mac so the module isn't all theory.
+- **Module 42 (distributed):** re-cast the MIT 6.5840 (Go) concepts as deterministic
+  in-process **C simulations** (RPC, Lamport/vector clocks, quorum replication, a
+  Raft-lite election + log commit) — self-contained and reproducible.
+- **xv6 (Module 36):** native POSIX demos (fork/exec, pipes, syscalls, a tiny shell)
+  run here; the xv6 kernel labs are documented as a qemu/RISC-V guide (not run here).
 
-## Suggested next step
+## What's not done
 
-Scaffold **Module 28 (Bits, Bytes & Number Representation)** end-to-end as the pilot —
-it sets the per-module template (source + Makefile + README lab + the Docker/Brewfile
-setup) the rest of the track copies. Build outward from there one module at a time.
+- **Progress tracker / CI** across the whole catalog — still deferred (same as the ML
+  tracks). A CI job that runs `make` in every `2x_`/`3x_`/`4x_` module would catch
+  regressions cheaply.
+- The **x86-64 container** (`28_bits_and_bytes/setup/`) and **qemu-riscv** are documented
+  but their gated labs (CS:APP bomb/attack, xv6 kernel) haven't been run end-to-end here.
