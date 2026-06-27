@@ -1,0 +1,15 @@
+# Track 6 — CS Foundations: native macOS toolchain (Apple Silicon / arm64)
+#
+#   brew bundle --file=28_bits_and_bytes/setup/Brewfile
+#
+# Modules 28, 30, 31, 37, 38 build and run NATIVELY with this. The x86-64-specific
+# CS:APP labs (Modules 32-35) and the RISC-V xv6 work (Module 36) use the container
+# and emulator described in setup/README.md instead.
+
+# Apple ships clang/make via the Command Line Tools, but make them explicit + current:
+brew "llvm"          # clang, clang-format, lldb
+brew "make"          # GNU make (newer than the system 3.81)
+brew "qemu"          # RISC-V emulation for xv6 (Module 36)
+brew "gdb"           # optional; lldb is the native Mac debugger
+brew "graphviz"      # diagrams in later modules
+cask "docker"        # the x86-64 lab box for CS:APP labs (Modules 32-35)
