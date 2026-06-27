@@ -135,6 +135,42 @@ and call your tools, read your data, and reuse your prompts.
 > FastAPI/Pydantic mental model from Module 17; pairs a teaching notebook with a runnable
 > `app/` (server + client) you wire into Claude per `app/README.md`.
 
+### 6. CS Foundations — from bits to systems (the bytes-up track)
+
+Everything above stands on Python and high-level libraries. This track goes the other
+way: **down to the metal and back up**, MIT-EECS style — single bits → logic gates → a
+CPU → C and pointers → assembly → caches → the operating system → algorithms →
+compilers → distributed systems → security. It can be taken **first** (it's
+foundational) despite the high numbers. See [the track plan](cs-foundations-track.md)
+for the full curriculum and source mapping (CS:APP, Nand2Tetris, MIT 6.191/6.1210/
+6.1800/6.1810, xv6).
+
+| # | Module | What You'll Learn |
+|---|--------|-------------------|
+| 28 | [Bits, Bytes & Number Representation](28_bits_and_bytes/) | Binary/hex, two's complement, IEEE-754, bitwise tricks |
+| 29 | [Digital Logic & the CPU](29_digital_logic/) | NAND → gates → mux → adders → an 8-bit ALU |
+| 30 | [C Programming I](30_c_programming_i/) | Pointers & memory, stack vs heap, strings, structs, a dynamic array |
+| 31 | [C Programming II](31_c_programming_ii/) | Multi-file builds, function pointers, the preprocessor, UB, gdb/valgrind |
+| 32 | [Assembly & the ISA](32_assembly/) | Reading compiler output, registers, calling conventions (x86-64 + native AArch64) |
+| 33 | [Computer Architecture](33_architecture/) | Cache locality, branch prediction, the memory hierarchy — measured |
+| 34 | [Linking, Loading & Processes](34_linking_loading/) | Compile→link→load, static/dynamic libraries, symbols |
+| 35 | [Virtual Memory & Allocation](35_virtual_memory/) | Address space, mmap, write your own malloc |
+| 36 | [Operating Systems with xv6](36_xv6_os/) | fork/exec/pipes/a tiny shell; the xv6 kernel labs (qemu/RISC-V) |
+| 37 | [Concurrency](37_concurrency/) | Threads, races, mutexes, condition vars, atomics, deadlock |
+| 38 | [Algorithms & Data Structures](38_algorithms/) | Sorting, hashing, trees/heaps, graphs, dynamic programming |
+| 39 | [Advanced Algorithms](39_advanced_algorithms/) | Greedy, divide & conquer, Dijkstra, MST, max-flow, NP-hardness |
+| 40 | [Compilers & Language Engineering](40_compilers/) | Lexer → parser → evaluator → bytecode VM for a small language |
+| 41 | [Networking Deep-Dive](41_networking/) | Sockets, TCP/UDP, a request/response protocol, a concurrent server |
+| 42 | [Distributed Systems](42_distributed/) | RPC, logical clocks, replication/quorums, a Raft-lite consensus sim |
+| 43 | [Security & Cryptography Foundations](43_security/) | Memory-safety bugs (explain-and-fix), constant-time compare, crypto primitives |
+| 44 | [C++ for Systems](44_cpp_for_systems/) *(optional)* | RAII, smart pointers, templates, the STL |
+
+> **Format differs from the rest of the catalog:** this track is real C/C++ + a
+> `Makefile` per module (not jupyter). Build with `make`, run a demo with `make run1`,
+> attempt `exercises/`, check against `solutions/`. The native parts run on Apple
+> Silicon; the x86-64 (CS:APP bomb/attack) and RISC-V (xv6) labs use the toolchain in
+> [`28_bits_and_bytes/setup/`](28_bits_and_bytes/setup/) (Docker + qemu).
+
 ## How to Use
 
 1. Open the notebook for each module in Jupyter
