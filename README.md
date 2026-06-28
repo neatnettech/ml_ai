@@ -110,6 +110,7 @@ PortSwigger, NIST).
 | 24 | [Auth Attacks & Defense](24_auth_attacks_and_defense/) | Brute force, credential stuffing, hash cracking → bcrypt, rate limit, lockout, TOTP MFA |
 | 25 | [Traffic & Crypto Attacks](25_traffic_and_crypto_attacks/) | Sniffing, HTTP vs TLS, ECB leakage, weak hashes, timing attacks |
 | 26 | [Capstone — Pentest](26_capstone_pentest/) | Full engagement: recon → exploit chain → CVSS report → remediation → re-test |
+| 46 | [Pentest Tooling](46_pentest_tooling/) | Drive the real tools — Nmap, Nikto, SQLmap, John, Hashcat (+ Metasploit/Maltego/Recon-ng) — against `vulnlab`, mapped to the by-hand attacks of 22–24 |
 
 > ⚖️ **Ethics & the law — read [Module 21](21_networking_and_packets/) first.** This
 > track teaches *authorized, defensive* security. Only test systems you own or have
