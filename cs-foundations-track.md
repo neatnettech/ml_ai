@@ -78,6 +78,7 @@ first pass without breaking the chain.
 |---|--------|----------------|-------------|
 | 43 | **Security & Cryptography Foundations** | threat models, the classic memory-safety vulns (ties to [vulnlab](23_web_app_security/)), crypto primitives & protocol theory (under applied [Module 18](18_cryptography/)) | MIT 6.5660 (sys security), 6.1600 |
 | 44 | **C++ for Systems** *(optional)* | RAII, references, templates, STL, smart pointers, move semantics; rewrite an earlier C lab in modern C++ | "A Tour of C++"; cppreference |
+| 45 | **C/C++ ↔ Python (FFI & Extensions)** | the bridge back to the Python tracks: one Mandelbrot kernel called via ctypes, the CPython C-API, pybind11, and NumPy, benchmarked vs pure Python | Python C-API & ctypes docs; pybind11 |
 
 ## Toolchain & the Apple-Silicon catch
 

@@ -164,6 +164,7 @@ for the full curriculum and source mapping (CS:APP, Nand2Tetris, MIT 6.191/6.121
 | 42 | [Distributed Systems](42_distributed/) | RPC, logical clocks, replication/quorums, a Raft-lite consensus sim |
 | 43 | [Security & Cryptography Foundations](43_security/) | Memory-safety bugs (explain-and-fix), constant-time compare, crypto primitives |
 | 44 | [C++ for Systems](44_cpp_for_systems/) *(optional)* | RAII, smart pointers, templates, the STL |
+| 45 | [C/C++ ↔ Python (FFI & Extensions)](45_c_python_bridge/) | Call C/C++ from Python (ctypes, C-API, pybind11) vs NumPy — the bridge back to the ML tracks |
 
 > **Format differs from the rest of the catalog:** this track is real C/C++ + a
 > `Makefile` per module (not jupyter). Build with `make`, run a demo with `make run1`,
