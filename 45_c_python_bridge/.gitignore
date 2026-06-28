@@ -1,0 +1,7 @@
+bin/
+build/
+*.so
+*.dylib
+*.o
+__pycache__/
+mandelbrot.png
