@@ -79,6 +79,7 @@ first pass without breaking the chain.
 | 43 | **Security & Cryptography Foundations** | threat models, the classic memory-safety vulns (ties to [vulnlab](23_web_app_security/)), crypto primitives & protocol theory (under applied [Module 18](18_cryptography/)) | MIT 6.5660 (sys security), 6.1600 |
 | 44 | **C++ for Systems** *(optional)* | RAII, references, templates, STL, smart pointers, move semantics; rewrite an earlier C lab in modern C++ | "A Tour of C++"; cppreference |
 | 45 | **C/C++ ↔ Python (FFI & Extensions)** | the bridge back to the Python tracks: one Mandelbrot kernel called via ctypes, the CPython C-API, pybind11, and NumPy, benchmarked vs pure Python | Python C-API & ctypes docs; pybind11 |
+| 47 | **C & C++ From Zero** *(standalone on-ramp)* | a beginner crash course in the C and C++ *languages*, assuming no prior track: hello world → types/control/functions → pointers/structs/malloc → iostream/references/vector → a class with RAII; links out to 30/31/44/45 to go deeper | K&R; "A Tour of C++"; cppreference |
 
 ## Toolchain & the Apple-Silicon catch
 
@@ -108,6 +109,10 @@ deliverable, so every later module has a consistent environment.
   Raft-lite election + log commit) — self-contained and reproducible.
 - **xv6 (Module 36):** native POSIX demos (fork/exec, pipes, syscalls, a tiny shell)
   run here; the xv6 kernel labs are documented as a qemu/RISC-V guide (not run here).
+- **Module 47 (C & C++ From Zero):** added a standalone beginner on-ramp that overlaps
+  M30/M44 by design — it assumes none of the bytes-up track and exists so someone who
+  just wants the languages can start here, then drop into 30/44 for the deep versions.
+  It's a labeled side-door, not a new node in the linear 28→45 spine.
 
 ## What's not done
 

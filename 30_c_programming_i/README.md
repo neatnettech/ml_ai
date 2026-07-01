@@ -13,6 +13,10 @@ assumes you can reason about byte by byte.
 value is a fixed run of bytes at some address. Module 29 (Digital Logic & the CPU)
 is helpful for intuition about what "memory" physically is, but not required.
 
+> **New to C entirely?** Start with [Module 47 — C & C++ From Zero](../47_c_cpp_from_zero/)
+> for a gentle, self-contained intro to the language, then come back here for the
+> bytes-up version that ties pointers to the hardware memory model.
+
 **What you'll learn:**
 - **Pointers**: addresses, `&` and `*`, pointer arithmetic, and how an array name
   *decays* to a pointer — so `a[i]` is literally `*(a + i)`
