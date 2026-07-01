@@ -17,6 +17,10 @@ already wrote.
 **Module 38 — Data Structures** (so you recognize what the STL hands you for free).
 Module 28 (bits & bytes) underlies all of it.
 
+> **Never written C++?** [Module 47 — C & C++ From Zero](../47_c_cpp_from_zero/) gives
+> the gentle intro (references, a first class, a first template); this module is the
+> deep systems version.
+
 **What you'll learn:**
 - **References vs pointers**, and **RAII**: a class that acquires a resource in its
   constructor and releases it in its destructor — deterministic cleanup at scope exit
